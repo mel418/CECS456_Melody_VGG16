@@ -8,17 +8,17 @@ Implementation of VGG16 Convolutional Neural Network for classifying 10 differen
 
 ## 🎯 Dataset
 - **Source**: Animals10 from Kaggle
-- **Total Images**: {len(full_dataset)}
-- **Classes**: {len(class_names)} ({', '.join(class_names)})
+- **Total Images**: 26179
+- **Classes**: 10 (cane, cavallo, elefante, farfalla, gallina, gatto, mucca, pecora, ragno, scoiattolo)
 - **Split**: 
-  - Training: {len(train_dataset)} images (70%)
-  - Validation: {len(val_dataset)} images (15%)
-  - Test: {len(test_dataset)} images (15%)
+  - Training: 18325 images (70%)
+  - Validation: 3926 images (15%)
+  - Test: 3928 images (15%)
 
 ## 🏗️ Model Architecture
 - **Base Model**: VGG16 (pre-trained on ImageNet)
-- **Total Parameters**: {total_params:,}
-- **Trainable Parameters**: {trainable_params:,}
+- **Total Parameters**: 134,301,514
+- **Trainable Parameters**: 119,586,826
 - **Input Size**: 224×224×3
 - **Modifications**: 
   - Froze convolutional layers
@@ -26,19 +26,19 @@ Implementation of VGG16 Convolutional Neural Network for classifying 10 differen
   - Added dropout for regularization
 
 ## 📈 Results
-- **Test Accuracy**: {test_accuracy:.2f}%
-- **Best Validation Accuracy**: {max(history['val_acc']):.2f}%
-- **Training Time**: {training_time/60:.2f} minutes
-- **Best Performing Class**: {vgg_summary['best_class']} ({vgg_summary['best_class_accuracy']:.2f}%)
-- **Most Challenging Class**: {vgg_summary['worst_class']} ({vgg_summary['worst_class_accuracy']:.2f}%)
+- **Test Accuracy**: 94.65%
+- **Best Validation Accuracy**: 94.93%
+- **Training Time**: 6.41 minutes
+- **Best Performing Class**: ragno (98.73%)
+- **Most Challenging Class**: pecora (88.85%)
 
 ## 🛠️ Training Configuration
-- **Epochs**: {EPOCHS}
-- **Batch Size**: {BATCH_SIZE}
-- **Learning Rate**: {LEARNING_RATE}
+- **Epochs**: 10
+- **Batch Size**: 64
+- **Learning Rate**: 0.001
 - **Optimizer**: Adam
 - **Loss Function**: Cross-Entropy
-- **Device**: {device}
+- **Device**: cuda
 
 ## 📦 Requirements
 ```
@@ -72,9 +72,9 @@ CECS456_Project/
 ```
 
 ## 📝 Key Findings
-1. VGG16 achieved {test_accuracy:.2f}% accuracy on Animals10 dataset
-2. Training converged in {EPOCHS} epochs
-3. Best performing class: {vgg_summary['best_class']}
+1. VGG16 achieved 94.65% accuracy on Animals10 dataset
+2. Training converged in 10 epochs
+3. Best performing class: ragno
 4. Most confused classes can be seen in confusion matrix
 
 ---
